@@ -1,3 +1,5 @@
+#Image classification using Keras with tensorflow as backend.
+
 from keras.models import Sequential
 from keras.layers import Convolution2D
 from keras.layers import MaxPooling2D
@@ -8,7 +10,6 @@ from keras.preprocessing.image import ImageDataGenerator
 classifier = Sequential()
 
 #First layer
-
 classifier.add(Convolution2D(32,3,3,input_shape=(64,64,3),activation='relu'))
 classifier.add(MaxPooling2D(pool_size=(2,2)))
 
@@ -29,12 +30,12 @@ train_datagen = ImageDataGenerator(
 
 test_datagen = ImageDataGenerator(rescale=1. / 255)
 
-training_set = train_datagen.flow_from_directory('/src_path/training_set',
+training_set = train_datagen.flow_from_directory('/src_path/training_set', #training data
                                                 target_size=(64, 64),
                                                 batch_size=32,
                                                 class_mode='binary')
 
-test_set = test_datagen.flow_from_directory('/src_path/test_set',
+test_set = test_datagen.flow_from_directory('/src_path/test_set', #test data
                                             target_size=(64, 64),
                                             batch_size=32,
                                             class_mode='binary')
