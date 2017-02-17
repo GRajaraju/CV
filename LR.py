@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 
 # Assigning X and y from the dataset
-data = np.loadtxt('/Users/rajaraju/Documents/test data/ex1data1.txt', delimiter=',')
+data = np.loadtxt('data path', delimiter=',')
 rows=(data.size)/2
 X = np.array((data[:, 0])).reshape(rows, 1)
 y = np.array(data[:, 1]).reshape(rows, 1)
