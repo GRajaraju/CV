@@ -37,8 +37,4 @@ def predict(newval):
     plt.ylim(0, 40)
     plt.show()
 
-print("Enter the number to be predicted:-")
-nv = input()
-nv = float(nv)
-predict(nv)
 
