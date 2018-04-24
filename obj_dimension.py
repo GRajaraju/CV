@@ -17,7 +17,6 @@ while True:
   _,contours, hierarchy = cv2.findContours(frame,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
   contour = contours[0]
   x,y,w,h = cv2.boundingRect(contour)
-  frame = cv2.cvtColor(frame,cv2.COLOR_GRAY2BGR)
   rect = cv2.minAreaRect(contour)
   box = cv2.boxPoints(rect)
   box = np.int0(box)
