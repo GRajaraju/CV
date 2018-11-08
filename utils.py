@@ -1,9 +1,10 @@
 
 import cv2
 
-
 img = cv2.imread('img path')
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+
 
 def convert_binary_image(gray):
 """ Convert the gray scale image to binary """
