@@ -1,3 +1,9 @@
+"""
+
+Using a pretrained ResNet152 to classify human activities.
+
+"""
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
