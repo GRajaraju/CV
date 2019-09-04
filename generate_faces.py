@@ -26,6 +26,15 @@ dataset = datasets.ImageFolder(root=data_dir, transform=transform)
 dataloader = torch.utils.data.DataLoader(dataset, batch_size=batchSize,
                     shuffle=True)
 
+def weight_init(m):
+  classname = m.__class__.__name__
+    if classname.find('Conv') != -1:
+        m.weight.data.normal_(0.0, 0.02)
+    elif classname.find('BatchNorm') != -1:
+        m.weight.data.normal_(0.0, 0.02)
+        m.bias.data.fill_(0)
+        
+
 # defining the generator
 class Generator(nn.Module):
 
