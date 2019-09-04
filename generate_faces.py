@@ -63,6 +63,7 @@ class Generator(nn.Module):
 
 # creating the generator
 net_gen = Generator()
+net_gen.apply(weight_init)
 
 # defining the discriminator
 class Discriminator(nn.Module):
@@ -91,6 +92,7 @@ class Discriminator(nn.Module):
 
 # creating the discriminator
 net_dis = Discriminator()
+net_dis.apply(weight_init)
 
 # training the dcgan
 criterion = nn.BCELoss()
